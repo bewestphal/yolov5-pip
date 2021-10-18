@@ -13,12 +13,12 @@ torchvision>=0.8.1
 tqdm>=4.41.0
 
 # Logging -------------------------------------
-tensorboard>=2.4.1
+# tensorboard>=2.4.1
 # wandb
 
 # Plotting ------------------------------------
-pandas>=1.1.4
-seaborn>=0.11.0
+# pandas>=1.1.4
+# seaborn>=0.11.0
 
 # Export --------------------------------------
 # coremltools>=4.1  # CoreML export
@@ -31,8 +31,8 @@ seaborn>=0.11.0
 # Extras --------------------------------------
 # albumentations>=1.0.3
 # Cython  # for pycocotools https://github.com/cocodataset/cocoapi/issues/172
-pycocotools>=2.0  # COCO mAP
+# pycocotools>=2.0  # COCO mAP
 # roboflow
-thop  # FLOPs computation
+# thop  # FLOPs computation
 # CLI
-fire
+# fire
