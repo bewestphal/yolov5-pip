@@ -7,7 +7,6 @@ import math
 import warnings
 from pathlib import Path
 
-import matplotlib.pyplot as plt
 import numpy as np
 import torch
 
@@ -161,6 +160,7 @@ class ConfusionMatrix:
         return self.matrix
 
     def plot(self, normalize=True, save_dir='', names=()):
+        import matplotlib.pyplot as plt
         try:
             import seaborn as sn
 
@@ -292,6 +292,7 @@ def wh_iou(wh1, wh2):
 # Plots ----------------------------------------------------------------------------------------------------------------
 
 def plot_pr_curve(px, py, ap, save_dir='pr_curve.png', names=()):
+    import matplotlib.pyplot as plt
     # Precision-recall curve
     fig, ax = plt.subplots(1, 1, figsize=(9, 6), tight_layout=True)
     py = np.stack(py, axis=1)
@@ -313,6 +314,7 @@ def plot_pr_curve(px, py, ap, save_dir='pr_curve.png', names=()):
 
 
 def plot_mc_curve(px, py, save_dir='mc_curve.png', names=(), xlabel='Confidence', ylabel='Metric'):
+    import matplotlib.pyplot as plt
     # Metric-confidence curve
     fig, ax = plt.subplots(1, 1, figsize=(9, 6), tight_layout=True)
 
