@@ -14,8 +14,6 @@ from pathlib import Path
 FILE = Path(__file__).resolve()
 ROOT = FILE.parents[1]  # YOLOv5 root directory
 
-from yolov5.models.common import *
-from yolov5.models.experimental import *
 from yolov5.utils.autoanchor import check_anchor_order
 from yolov5.utils.general import check_yaml, make_divisible, print_args, set_logging
 from yolov5.utils.plots import feature_visualization

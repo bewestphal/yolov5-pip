@@ -7,7 +7,6 @@ import warnings
 from threading import Thread
 
 import torch
-from torch.utils.tensorboard import SummaryWriter
 
 from yolov5.utils.general import colorstr, emojis
 from yolov5.utils.loggers.wandb.wandb_utils import WandbLogger
@@ -66,6 +65,7 @@ class Loggers():
         # TensorBoard
         s = self.save_dir
         if 'tb' in self.include and not self.opt.evolve:
+            from torch.utils.tensorboard import SummaryWriter
             prefix = colorstr('TensorBoard: ')
             self.logger.info(f"{prefix}Start with 'tensorboard --logdir {s.parent}', view at http://localhost:6006/")
             self.tb = SummaryWriter(str(s))
