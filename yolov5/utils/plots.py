@@ -12,7 +12,6 @@ import cv2
 import matplotlib
 import matplotlib.pyplot as plt
 import numpy as np
-import seaborn as sn
 import torch
 from PIL import Image, ImageDraw, ImageFont
 
@@ -291,6 +290,7 @@ def plot_val_study(file='', dir='', x=None):  # from utils.plots import *; plot_
 
 
 def plot_labels(labels, names=(), save_dir=Path('')):
+    import seaborn as sn
     import pandas as pd
     # plot dataset labels
     print('Plotting labels... ')
