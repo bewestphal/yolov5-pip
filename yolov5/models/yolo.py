@@ -19,7 +19,8 @@ from yolov5.models.experimental import CrossConv, MixConv2d
 FILE = Path(__file__).resolve()
 ROOT = FILE.parents[1]  # YOLOv5 root directory
 
-from yolov5.models.common import Bottleneck, BottleneckCSP, C3, C3Ghost, C3SPP, C3TR, Concat, Contract, Conv, DWConv, \
+from yolov5.models.common import AutoShape, Bottleneck, BottleneckCSP, C3, C3Ghost, C3SPP, C3TR, Concat, Contract, Conv, \
+    DWConv, \
     Expand, Focus, \
     GhostBottleneck, \
     GhostConv, \
