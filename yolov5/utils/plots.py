@@ -12,7 +12,6 @@ import cv2
 import matplotlib
 import matplotlib.pyplot as plt
 import numpy as np
-import pandas as pd
 import seaborn as sn
 import torch
 from PIL import Image, ImageDraw, ImageFont
@@ -292,6 +291,7 @@ def plot_val_study(file='', dir='', x=None):  # from utils.plots import *; plot_
 
 
 def plot_labels(labels, names=(), save_dir=Path('')):
+    import pandas as pd
     # plot dataset labels
     print('Plotting labels... ')
     c, b = labels[:, 0], labels[:, 1:].transpose()  # classes, boxes
@@ -367,6 +367,7 @@ def profile_idetection(start=0, stop=0, labels=(), save_dir=''):
 
 
 def plot_evolve(evolve_csv='path/to/evolve.csv'):  # from utils.plots import *; plot_evolve()
+    import pandas as pd
     # Plot evolve.csv hyp evolution results
     evolve_csv = Path(evolve_csv)
     data = pd.read_csv(evolve_csv)
@@ -393,6 +394,7 @@ def plot_evolve(evolve_csv='path/to/evolve.csv'):  # from utils.plots import *; 
 
 
 def plot_results(file='path/to/results.csv', dir=''):
+    import pandas as pd
     # Plot training results.csv. Usage: from utils.plots import *; plot_results('path/to/results.csv')
     save_dir = Path(file).parent if file else Path(dir)
     fig, ax = plt.subplots(2, 5, figsize=(12, 6), tight_layout=True)

@@ -22,7 +22,6 @@ from zipfile import ZipFile
 
 import cv2
 import numpy as np
-import pandas as pd
 import pkg_resources as pkg
 import torch
 import torchvision
@@ -35,7 +34,6 @@ from yolov5.utils.metrics import box_iou, fitness
 # Settings
 torch.set_printoptions(linewidth=320, precision=5, profile='long')
 np.set_printoptions(linewidth=320, formatter={'float_kind': '{:11.5g}'.format})  # format short g, %precision=5
-pd.options.display.max_columns = 10
 cv2.setNumThreads(0)  # prevent OpenCV from multithreading (incompatible with PyTorch DataLoader)
 os.environ['NUMEXPR_MAX_THREADS'] = str(min(os.cpu_count(), 8))  # NumExpr max threads
 
@@ -716,6 +714,9 @@ def strip_optimizer(f='best.pt', s=''):  # from utils.general import *; strip_op
 
 
 def print_mutation(results, hyp, save_dir, bucket):
+    import pandas as pd
+    pd.options.display.max_columns = 10
+
     evolve_csv, results_csv, evolve_yaml = save_dir / 'evolve.csv', save_dir / 'results.csv', save_dir / 'hyp_evolve.yaml'
     keys = ('metrics/precision', 'metrics/recall', 'metrics/mAP_0.5', 'metrics/mAP_0.5:0.95',
             'val/box_loss', 'val/obj_loss', 'val/cls_loss') + tuple(hyp.keys())  # [results + hyps]
